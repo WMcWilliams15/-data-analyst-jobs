@@ -57,10 +57,20 @@ FROM data_analyst_job;
 Answer 7	881
 
 Question 8	How many unique job titles are there for California companies?
-*/
+
 SELECT COUNT(DISTINCT title)
 FROM data_analyst_job
 WHERE location = 'CA';
 
 Answer 8	230
 
+Question 9	Find the name of each company and its average star rating for all 
+			companies that have more than 5000 reviews across all locations. 
+			How many companies are there with more that 5000 reviews across all locations?
+*/
+SELECT DISTINCT (company) AS unique_company, avg(star_rating) AS avg_star_rating
+FROM data_analyst_job
+WHERE review_count > 5000
+GROUP BY company;
+
+Answer 9	41
