@@ -79,7 +79,7 @@ Answer 9	41
 Question 10	Add the code to order the query in #9 from highest to lowest average star rating. 
 			Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? 
 			What is that rating?
-*/
+
 SELECT DISTINCT (company) AS unique_company, avg(star_rating) AS avg_star_rating
 FROM data_analyst_job
 WHERE review_count > 5000
@@ -87,3 +87,11 @@ GROUP BY unique_company
 ORDER BY avg_star_rating DESC;
 
 Answer 10	American Express,  4.199...809
+
+Question 11	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
+*/
+SELECT COUNT(*)
+FROM data_analyst_job
+WHERE title LIKE '%Analyst%';
+
+Answer 11	1636
