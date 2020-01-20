@@ -23,9 +23,17 @@ WHERE location = 'TN' OR location = 'KY';
 Answer 3 TN= 21, KY = 6
 
 Question 4 How many postings in Tennessee have a star rating above 4?
-*/
+
 SELECT COUNT(*)
 FROM data_analyst_job
 WHERE location = 'TN' AND star_rating > 4;
 
 Answer 4  	3
+
+Question 5 How many postings in the dataset have a review count between 500 and 1000?
+*/
+SELECT COUNT(*)
+FROM data_analyst_job
+WHERE review_count BETWEEN 500 AND 1000
+
+Answer 5	151
