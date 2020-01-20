@@ -7,3 +7,6 @@ OR title <> LIKE '%Analytics%'
 OR title <> LIKE '%analytics%'
 OR title <> LIKE '%ANALYTICS%';
 
+start at question one. git push
+then one by one, git push each question until i reach 12.
+use the same file path.
