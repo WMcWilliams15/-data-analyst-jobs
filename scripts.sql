@@ -15,9 +15,17 @@ LIMIT 10
 Answer 2. ExxonMobil
 
 Question 3. How many postings are in Tennessee? How many are there in either Tennessee or Kentucky?
-*/
+
 SELECT COUNT(*)
 FROM data_analyst_job
 WHERE location = 'TN' OR location = 'KY';
 
-Answer TN= 21, KY = 6
+Answer 3 TN= 21, KY = 6
+
+Question 4 How many postings in Tennessee have a star rating above 4?
+*/
+SELECT COUNT(*)
+FROM data_analyst_job
+WHERE location = 'TN' AND star_rating > 4;
+
+Answer 4  	3
