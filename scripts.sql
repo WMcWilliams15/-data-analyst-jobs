@@ -89,9 +89,21 @@ ORDER BY avg_star_rating DESC;
 Answer 10	American Express,  4.199...809
 
 Question 11	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
-*/
+
 SELECT COUNT(*)
 FROM data_analyst_job
 WHERE title LIKE '%Analyst%';
 
 Answer 11	1636
+
+Question 12	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? 
+			What word do these positions have in common?
+*/
+SELECT DISTINCT (title)
+FROM data_analyst_job
+WHERE title NOT LIKE '%ANALYST%'
+OR title NOT LIKE '%Analyst%'
+OR title NOT LIKE '%analyst%'
+OR title NOT LIKE '%Analytics%'
+OR title NOT LIKE '%analytics%'
+OR title NOT LIKE '%ANALYTICS%';
