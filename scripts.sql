@@ -70,13 +70,21 @@ Question 9	Find the name of each company and its average star rating for all
 			companies that have more than 5000 reviews across all locations. 
 			How many companies are there with more that 5000 reviews across all locations?
 
-SELECT DISTINCT (company) AS unique_company, avg(star_rating) AS avg_star_rating
+
+SELECT DISTINCT(company), avg(star_rating) AS avg_star_rating
 FROM data_analyst_job
 WHERE review_count > 5000
 GROUP BY company;
 
 Answer 9	41
 
+
+SELECT company, ROUND(AVG(star_rating), 3)
+FROM data_analyst_jobs
+WHERE location IS NOT NULL
+GROUP BY company
+HAVING SUM(review_count) > 5000;
+answer is 70
 
 Question 10	Add the code to order the query in #9 from highest to lowest average star rating. 
 			Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? 
@@ -88,13 +96,15 @@ WHERE review_count > 5000
 GROUP BY unique_company
 ORDER BY avg_star_rating DESC;
 
+look at previous question. google is the answere for number 10.
+
 Answer 10	American Express,  4.199...809
 
 Question 11	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
 
-SELECT COUNT(*)
+SELECT COUNT(*)						/*	why should i have used distinct here?	*/
 FROM data_analyst_job
-WHERE title LIKE '%Analyst%';
+WHERE title LIKE '%Analyst%';		/* 	whats the difference between like and ilke?  */
 
 Answer 11	1636
 
@@ -109,4 +119,10 @@ OR title NOT LIKE '%analyst%'
 OR title NOT LIKE '%Analytics%'
 OR title NOT LIKE '%analytics%'
 OR title NOT LIKE '%ANALYTICS%';
-*/
+
+
+SELECT DISTINCT(title)
+FROM data_analyst_job
+WHERE title NOT (ILIKE '%ANALYST%' )
+
+use not ilike, LOWER(title), in the where statement.
