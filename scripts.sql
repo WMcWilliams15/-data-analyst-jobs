@@ -44,8 +44,10 @@ Question 6	Show the average star rating for each state.
 
 SELECT avg(star_rating) AS avg_rating, location AS state
 FROM data_analyst_job
+WHERE star_rating IS NOT NULL  	/* IS THIS RIGHT OR WRONG */
 GROUP BY location
 ORDER BY avg_rating DESC;
+
 
 Answer 6	NE
 
@@ -98,7 +100,7 @@ Answer 11	1636
 
 Question 12	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? 
 			What word do these positions have in common?
-*/
+
 SELECT DISTINCT (title)
 FROM data_analyst_job
 WHERE title NOT LIKE '%ANALYST%'
@@ -107,3 +109,4 @@ OR title NOT LIKE '%analyst%'
 OR title NOT LIKE '%Analytics%'
 OR title NOT LIKE '%analytics%'
 OR title NOT LIKE '%ANALYTICS%';
+*/
