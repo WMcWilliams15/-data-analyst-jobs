@@ -121,7 +121,7 @@ OR title NOT LIKE '%analytics%'
 OR title NOT LIKE '%ANALYTICS%';
 
 
-SELECT DISTINCT(title)
+SELECT DISTINCT(title)    
 FROM data_analyst_job
 WHERE title NOT (ILIKE '%ANALYST%' )
 
